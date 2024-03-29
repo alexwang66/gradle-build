@@ -18,7 +18,7 @@ gitlab-ci-gradle-build: #This job name will be used as the build info repository
  stage: build
  image: gradle:8.1.1
  script:
-   - cd gradle-examples/gradle-example
+   - cd gradle-examples/java-app
    # upload the built artifact to artifactory
    - jf gradle clean artifactoryPublish --build-name=$CI_JOB_NAME --build-number=$CI_JOB_ID
    # Collect environment variables for the build
