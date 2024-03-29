@@ -16,7 +16,7 @@ stages:
 
 gitlab-ci-gradle-build: #This job name will be used as the build info repository name in artifactory
  stage: build
- image: gradle:8.1.1
+ image: gradle:8.0.2
  script:
    - cd project-examples/gradle-examples/java-app
    # upload the built artifact to artifactory
