@@ -2,7 +2,7 @@ before_script:
  # Download JFrog CLI
  -  curl -fL https://install-cli.jfrog.io | sh
  # configure artifactory server
- - jf config add $JFROG_PLATFORM_SERVER_ID --url=$JFROG_PLATFORM_URL --user=$JFROG_PLATFORM_USER --password=$JFROG_PLATFORM_PASS
+ - jf config add tcs --url=$JFROG_PLATFORM_URL --user=$JFROG_PLATFORM_USER --password=$JFROG_PLATFORM_PASS
   # configure gradle, set upload and download repos
  - jf gradlec --repo-resolve $JFROG_PLATFORM_REPO --repo-deploy $JFROG_PLATFORM_REPO
  
@@ -10,7 +10,7 @@ before_script:
  
  # configure gradle, set upload and download repos
  - jf mvnc --repo-resolve-releases $JFROG_PLATFORM_REPO --repo-deploy-releases $JFROG_PLATFORM_REPO  --repo-resolve-snapshots $JFROG_PLATFORM_REPO --repo-deploy-snapshots $JFROG_PLATFORM_REPO 
- - jf c use $JFROG_PLATFORM_SERVER_ID
+ - jf c use tcs
 stages:
   - build
 
